@@ -12,7 +12,7 @@ class Solution {
             scoredWords.add(new Pair<String, Integer>(word, i));
         }
 
-        Collections.sort(scoredWords, Comparator.comparing(p -> p.getValue()));
+        Collections.sort(scoredWords, (a,b) -> a.getValue() - b.getValue());
 
         StringBuilder result = new StringBuilder();
         scoredWords.forEach(word -> {result.append(word.getKey() + " ");});
